@@ -1,9 +1,9 @@
 import sys; sys.dont_write_bytecode = True
 from flask import session, redirect, request, abort, url_for, render_template, flash
 from flask_login import login_required, current_user, login_user, logout_user
-from .src import create_app
-from .src.base import db
-from .src.user import User
+from src import create_app
+from src.base import db
+from src.user import User
 
 
 app, login_manager = create_app()
@@ -26,3 +26,7 @@ def login():
 def index():
     return render_template("index.html", user=current_user)
 
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=8080)

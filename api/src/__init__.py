@@ -1,4 +1,4 @@
-import dotenv
+import dotenv, os
 dotenv.load_dotenv()
 
 from flask import Flask
@@ -26,11 +26,12 @@ def create_app():
     app.config["SESSION_TYPE"] = "filesystem"
     app.config["SESSION_FILE_DIR"] = "/tmp/sessions"
 
+    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ["POSTGRESQL_URI"]
+
     CORS(app)
     Session(app)
     Compress(app)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
     db.init_app(app)
     with app.app_context():
         db.create_all()
