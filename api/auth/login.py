@@ -14,8 +14,8 @@ from google.oauth2 import id_token
 from flask import session, redirect, url_for, abort, flash, request
 from flask_login import login_required, current_user, login_user, logout_user
 
-from src.base import db
-from src.user import User, oAuthProviders
+from ..src.base import db
+from ..src.user import User, oAuthProviders
 
 from . import auth_bp
 

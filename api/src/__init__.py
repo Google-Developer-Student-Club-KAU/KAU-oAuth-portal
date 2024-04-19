@@ -42,7 +42,7 @@ def create_app():
     login_manager.init_app(app)
 
     
-    from auth import auth_bp
+    from ..auth import auth_bp
     app.register_blueprint(auth_bp)
 
     return (app, login_manager)
