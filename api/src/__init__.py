@@ -24,7 +24,7 @@ def create_app():
     app.static_folder = "../static"
 
     app.config["SESSION_TYPE"] = "filesystem"
-    app.config["SESSION_FILE_DIR"] = "./.sessions"
+    app.config["SESSION_FILE_DIR"] = "/tmp/sessions"
 
     CORS(app)
     Session(app)
