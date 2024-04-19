@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+identity = "*"
+google-auth-oauthlib = "*"
+flask = "*"
+flask-session = "*"
+flask-sqlalchemy = "*"
+flask-login = "*"
+flask-cors = "*"
+flask-compress = "*"
+python-dotenv = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
