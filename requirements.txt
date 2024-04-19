@@ -7,4 +7,4 @@ flask_login
 flask_cors
 flask_compress
 python-dotenv
-psycopg2
+psycopg2-binary
