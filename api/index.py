@@ -1,9 +1,9 @@
 import sys; sys.dont_write_bytecode = True
 from flask import session, redirect, request, abort, url_for, render_template, flash
 from flask_login import login_required, current_user, login_user, logout_user
-from src import create_app
-from src.base import db
-from src.user import User
+from .src import create_app
+from .src.base import db
+from .src.user import User
 
 
 app, login_manager = create_app()
