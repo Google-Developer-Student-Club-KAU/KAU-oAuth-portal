@@ -4,3 +4,6 @@ flask
 flask_session
 flask_sqlalchemy
 flask_login
+flask_cors
+flask_compress
+python-dotenv
