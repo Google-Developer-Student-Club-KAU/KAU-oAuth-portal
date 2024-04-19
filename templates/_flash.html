@@ -1,0 +1,31 @@
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div style="position: fixed; top: 100px; left: 0; right: 0; z-index: 1000;" id="flashMsgParent">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    {% for category, message in messages %}
+                        <div class="d-flex justify-content-center alert alert-{{ category }} alert-dismissible" role="alert" id="flash-message">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endwith %}
+
+<!-- JavaScript to auto-dismiss alerts after n seconds -->
+<script>
+    var duration = 2500;
+    setTimeout(function() {
+        var flashMessage = document.getElementById('flashMsgParent');
+        if (flashMessage) {
+            flashMessage.style.transition = 'opacity 1.2s';
+            flashMessage.style.opacity = '0';
+            setTimeout(function() {
+                flashMessage.style.display = 'none';
+            }, duration/4);
+        }
+    }, duration);
+</script>

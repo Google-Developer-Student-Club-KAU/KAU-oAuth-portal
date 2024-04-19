@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary shadow-sm rounded">
+  <div class="container-fluid">
+    <a class="navbar-brand">hi.</a>
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Avatar -->
+      {% if current_user.is_authenticated %}
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="{{user.profile_pic}}" height="32" class="rounded-circle">
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="{{url_for('auth.logout')}}">Log Out</a>
+            </div>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</nav>
