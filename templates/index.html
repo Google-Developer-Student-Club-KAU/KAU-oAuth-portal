@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <div class="row justify-content-center align-items-center">
+    مرحبا {{user.name}}!
+    <!-- display other user information -->
+    {{user.email}}
+    
+  </div>
+{% endblock %}
