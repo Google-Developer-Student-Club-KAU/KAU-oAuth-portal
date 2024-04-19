@@ -20,6 +20,9 @@ def login():
 
     return render_template('login.html')
 
+@app.route("/test")
+def test():
+    return "hi."
 
 @app.route("/")
 @login_required
